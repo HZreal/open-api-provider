@@ -1,6 +1,6 @@
 package routers
 
-import "open-api-interface/api"
+import "open-api-provider/api"
 
 func addSentenceRouter() {
 	apiGroup.GET("sentence", api.RootApi.GetSentence)

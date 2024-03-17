@@ -1,4 +1,4 @@
-module open-api-interface
+module open-api-provider
 
 go 1.20
 

@@ -1,8 +1,8 @@
 package main
 
 import (
-	"open-api-interface/config"
-	"open-api-interface/routers"
+	"open-api-provider/config"
+	"open-api-provider/routers"
 )
 
 func main() {

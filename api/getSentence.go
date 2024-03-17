@@ -4,7 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"math/rand"
 	"net/http"
-	"open-api-interface/common"
+	"open-api-provider/common"
 )
 
 func (Api) GetSentence(c *gin.Context) {
