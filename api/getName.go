@@ -1,12 +1,26 @@
 package api
 
 import (
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"open-api-provider/utils"
 )
 
+type GetNameByGetHeader struct {
+	// 测试网关代码染色，在请求头中添加标识
+	Source string `json:"source"`
+}
+
 func (Api) GetNameByGet(c *gin.Context) {
+	// 解析 Header
+	var reqHeader GetNameByGetHeader
+	if err := c.ShouldBindHeader(&reqHeader); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "empty header"})
+		return
+	}
+	fmt.Println("source ----> ", reqHeader.Source)
+
 	name := c.Query("name")
 	c.JSON(200, gin.H{"name": name})
 }
